@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.example-button-container button {
+  height: 30px;
+  width: 30px;
+  margin: 0 5px;
+}
+
+.simple-snack-bar{
+  text-align: center;
+}

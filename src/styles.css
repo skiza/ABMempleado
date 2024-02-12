@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+h1,h2,h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-custom {
+    background: #f44336;
+    color: #fff;
+}
+
+.btn-custom:hover {
+    background: transparent;
+    color: #f44336;
+    border-color: #f44336;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-simple-snack-bar{
+    text-align: center;
+}

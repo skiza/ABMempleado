@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <div
+            class="col-6"
+        >
+            <h2>Agregar empleado</h2>
+            <pre>
+                {{ empleadoForm.value | json}}
+            </pre>
+        </div>        
+    </div>
+    <div class="row justify-content-between">
+        <div
+            class="col-6"
+        >
+            <div class="">
+                <form [formGroup]="empleadoForm">
+                    <div class="mb-3 row">
+                        <mat-form-field>
+                            <mat-label>Nombre Completo</mat-label>
+                            <input matInput formControlName="nombreCompleto">
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-3 row">
+                        <mat-form-field>
+                            <mat-label>Correo</mat-label>
+                            <input matInput formControlName="correo">
+                        </mat-form-field>
+                    </div>
+                 
+                    <div class="mb-3 row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Fecha de ingreso</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="fechaIngreso">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi #picker></mat-datepicker>
+                          </mat-form-field>
+                    </div>
+                    <div class="mb-3 row">
+                        <mat-form-field>
+                            <mat-label>Telefono</mat-label>
+                            <input matInput formControlName="telefono">
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-3 row">
+                        <mat-form-field>
+                            <mat-label>Estado civil</mat-label>
+                            <mat-select formControlName="estadoCivil">
+                              @for (estadoCivil of estadoCivilList; track estadoCivil) {
+                                <mat-option [value]="estadoCivil.value">{{estadoCivil.viewValue}}</mat-option>
+                              }
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="mb-3 row">
+                        <label>Sexo</label>
+                        <mat-radio-group aria-label="Select an option" formControlName="sexo">
+                        <mat-radio-button  value="hombre">Hombre</mat-radio-button>
+                        <mat-radio-button  value="mujer">Mujer</mat-radio-button>
+                        </mat-radio-group>                  
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col text-end">
+                            <button type="button" class="btn btn-dark btn-lg me-3" routerLink="/">
+                                Cancelar
+                            </button>
+                            <button type="submit" (click)="guardarEmpleado()" class="btn btn-custom btn-lg">
+                                Aceptar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div
+            class="col-5"
+        >
+            <img src="/assets/img/crear-usuario.jpg" alt="" class="w-100">
+        </div>
+        
+    </div>
+</div>
+
